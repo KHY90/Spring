@@ -1,0 +1,31 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Mission</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1> Mission 페이지 </h1>-->
+<!--    <h1 id="message" th:text="${message}"></h1>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title> Mission Result </title>
+</head>
+<body>
+<h1> 제출 페이지 </h1>
+<br>
+<h1 id="message" th:text="${message}"></h1>
+
+<script>
+    // sessionStorage에서 입력한 메시지를 가져와 화면에 표시
+    var userInput = sessionStorage.getItem("userInput");
+    document.getElementById('message').textContent = userInput;
+</script>
+
+</body>
+</html>

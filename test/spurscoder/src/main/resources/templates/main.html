@@ -1,0 +1,55 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<form action="/mission1" method="get">-->
+<!--    <select id="select" name="select">-->
+<!--        <option value="user">유저</option>-->
+<!--        <option value="admin">관리자</option>-->
+<!--    </select>-->
+<!--    <br>-->
+<!--    <input type="text" name="pathValue"/>-->
+<!--    <input type="submit" name="전송">-->
+<!--</form>-->
+
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function checkPermission() {
+            var selectBox = document.getElementById("permissions"); // 권한 선택 select 요소 가져오기
+            var selectedValue = selectBox.options[selectBox.selectedIndex].value; // 선택된 값 가져오기
+            if (selectedValue === "admin") {
+                alert("잘못된 요청입니다.");
+            } else if (selectedValue === "user") {
+                var userInput = document.getElementById("pathValue").value;
+                sessionStorage.setItem("userInput", userInput); // 입력한 메시지를 sessionStorage에 저장
+                document.getElementById("myForm").submit(); // 폼 제출
+            }
+        }
+    </script>
+</head>
+<body>
+
+<form id="myForm" action="/mission1" method="get">
+    <label for="permissions">권한 선택 : </label>
+    <select id="permissions" name="permissions">
+        <option value="user"> 유저 </option>
+        <option value="admin"> 관리자 </option>
+    </select>
+    <input type="text" name="pathValue" id="pathValue"/>
+    <br>
+    <input type="button" value="확인" onclick="checkPermission()">
+</form>
+
+</body>
+</html>
