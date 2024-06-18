@@ -29,9 +29,9 @@ public class ResolverController {
     }
 
     /*
-    * 기본적으로 redirect시에는 재요청이 발생하므로 request scope는 소멸된다.
-    * 하지만 스프링에서는 redirectAttributes 타입을 통해 redirect 시 속성 값을 저장할 수 있도록 하는 기능을 제공한다.
-    * */
+     * 기본적으로 redirect시에는 재요청이 발생하므로 request scope는 소멸된다.
+     * 하지만 스프링에서는 redirectAttributes 타입을 통해 redirect 시 속성 값을 저장할 수 있도록 하는 기능을 제공한다.
+     * */
     @GetMapping("string-redirect-attr")
     public String StringRedirectFlachAttribute(RedirectAttributes rttr) {
         /*
@@ -42,7 +42,6 @@ public class ResolverController {
 
         rttr.addFlashAttribute("flashMessage1", "리다이렉트 attr 사용하여 redirect..");
         return "redirect:/";
-
     }
 
     @GetMapping("modelandview")
