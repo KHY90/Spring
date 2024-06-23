@@ -1,0 +1,27 @@
+/* 헤더 스타일 */
+header {
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .top-nav {
+    display: flex;
+    gap: 20px;
+}
+
+header .top-nav div, header .top-nav button {
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+header .top-nav div:hover, header .top-nav button:hover {
+    background-color: #e0e0e0;
+}

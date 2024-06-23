@@ -1,0 +1,95 @@
+/* 기본 스타일 초기화 */
+body, h1, h2, h3, p, div, header, section {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 전체 레이아웃 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* 헤더 스타일 */
+header {
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .top-nav {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header .top-nav a {
+    text-decoration: none; /* 링크 밑줄 제거 */
+    color: black; /* 링크 색상 설정 */
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+header .top-nav a:hover {
+    background-color: #e0e0e0;
+}
+
+/* 메인 이미지 스타일 */
+.mainpage {
+    text-align: center;
+    margin: 20px 0;
+    position: relative; /* 이미지 컨테이너를 relative로 설정하여 내부 요소들을 상대적으로 배치합니다 */
+}
+
+.img-text {
+    position: absolute; /* 텍스트를 이미지 내에 절대 위치로 설정합니다 */
+    bottom: 50%; /* 이미지 아래쪽과 수평 중앙에 위치하도록 조정 */
+    left: 50%; /* 이미지 왼쪽과 수직 중앙에 위치하도록 조정 */
+    transform: translate(-50%, 50%); /* translate를 사용하여 정확한 중앙 정렬을 수행합니다 */
+    font-size: 50px; /* 원하는 폰트 크기 설정 */
+    color: white; /* 텍스트 색상 설정 */
+    background-color: rgba(0, 4, 255, 0.18); /* 텍스트 배경색 설정 */
+    padding: 10px; /* 텍스트 주위의 여백 설정 */
+}
+
+.mainpage img {
+    width: 100%;
+    max-width: 100%;
+    height: 500px;
+}
+
+/* 섹션 스타일 */
+section {
+    padding: 20px;
+    background-color: white;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.inner h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* 포스트 이미지 스타일 */
+.main-select {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.share-text, .plan-text {
+    text-align: center;
+    align-items: center; /* 내부 요소들을 세로 중앙 정렬 */
+    justify-content: center; /* 내부 요소들을 가로 중앙 정렬 */
+}
