@@ -8,27 +8,23 @@ import org.springframework.web.servlet.ModelAndView;
 public class MainController {
 
     @GetMapping("/")
-    public String index(ModelAndView mv) {
-
+    public String index() {
         return "index";
     }
 
-    @GetMapping("/plan")
-    public String plan(ModelAndView mv) {
-
-        return "plan/plan";
-    }
-
     @GetMapping("/share")
-    public String share(ModelAndView mv) {
-
+    public String share() {
         return "share/share";
     }
 
-    @GetMapping("/login")
-    public String login(ModelAndView mv) {
+    @GetMapping("/plan")
+    public String plan() {
+        return "plan/plan";
+    }
 
-        return "login/login";
+    @GetMapping("/map")
+    public String map() {
+        return "plan/plan/map";
     }
 
 }

@@ -3,6 +3,9 @@ footer {
     display: flex;
     justify-content: center; /* 내부 요소들을 수평으로 가운데 정렬 */
     align-items: center; /* 내부 요소들을 수직으로 가운데 정렬 */
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 footer a {

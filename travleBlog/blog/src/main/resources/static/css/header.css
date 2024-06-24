@@ -7,13 +7,27 @@ header {
 
 header .top {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* 좌우 분산 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    height: 8vh;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-header .top-nav {
+header .top > div {
+    display: flex;
+    align-items: center; /* 각 박스의 내용을 세로 중앙 정렬 */
+    text-decoration: none;
+}
+
+header .top .top-nav {
     display: flex;
     gap: 20px;
+    text-decoration: none;
+}
+
+.top-nav {
+    text-decoration: none;
 }
 
 header .top-nav div, header .top-nav button {

@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:fragment="calenderfragment">
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="calenderFragment">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>calender</title>
     <link rel="stylesheet" th:href="@{/css/calender.css}">
-
+    <script src="/js/calender.js"></script>
 </head>
 <body>
+
+<div class="main">
+    <h1>여행 플래너</h1>
+</div>
+
 <div class="calendar-container">
     <div class="calendar-header">
         <button id="prevBtn">이전</button>
@@ -25,44 +30,15 @@
     <div class="calendar-dates" id="calendarDates"></div>
 </div>
 
-<div class="input-container">
-    <!-- 첫 번째 입력 칸 -->
-    <div class="input-box">
-        <label for="input1" class="input-label"></label>
-        <input type="text" id="input1" class="input-field">
-    </div>
-
-    <!-- 두 번째 입력 칸 -->
-    <div class="input-box">
-        <label for="input2" class="input-label"></label>
-        <input type="text" id="input2" class="input-field">
-    </div>
-
-    <!-- 세 번째 입력 칸 -->
-    <div class="input-box">
-        <label for="input3" class="input-label"></label>
-        <input type="text" id="input3" class="input-field">
-    </div>
-</div>
-
-<footer>
-    <button id="footerButton">할일 추가</button>
-    <button id="footerButton1">지도 추가</button>
-    <button id="footerButton2">수정</button>
-</footer>
-
-
-
 <script>
-
     const calendarDates = document.getElementById("calendarDates");
     const currentMonthElement = document.getElementById("currentMonth");
     const prevBtn = document.getElementById("prevBtn");
     const nextBtn = document.getElementById("nextBtn");
 
-    let today = new Date(); // 현재 날짜를 나타내는 Date 객체를 저장한다.
-    let currentMonth = today.getMonth(); // 현재 월을 나타내는 값을 저장한다.
-    let currentYear = today.getFullYear(); // 변수에 현재 연도를 나타내는 값을 저장한다.
+    let today = new Date();
+    let currentMonth = today.getMonth();
+    let currentYear = today.getFullYear();
 
     function renderCalendar() {
         const firstDayOfMonth = new Date(currentYear, currentMonth, 1);
@@ -83,6 +59,17 @@
             const dateElement = document.createElement("div");
             dateElement.classList.add("date");
             dateElement.textContent = i;
+            dateElement.addEventListener("click", function() {
+                const selectedDate = `${currentYear}-${currentMonth + 1}-${i}`;
+                const urlParams = new URLSearchParams(window.location.search);
+                let dates = urlParams.get('dates');
+                if (!dates) {
+                    dates = selectedDate;
+                } else {
+                    dates += ',' + selectedDate;
+                }
+                window.location.href = `map.html?dates=${dates}`;
+            });
             calendarDates.appendChild(dateElement);
         }
     }
@@ -108,10 +95,6 @@
             renderCalendar();
         });
     });
-
 </script>
-
-
-
 </body>
 </html>
