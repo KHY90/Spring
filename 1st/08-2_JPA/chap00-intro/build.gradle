@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.ohgiraffers'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+//  테스트 코드를 인식해주는 라이브러리
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+//  jdbc는 인터페이스
+    implementation 'com.mysql:mysql-connector-j:8.0.33'
+}
+
+test {
+    useJUnitPlatform()
+}
