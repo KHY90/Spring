@@ -1,5 +1,8 @@
-package com.ohgiraffers.section01.problem;
+package com.ohgiraffers.section01.problem.ProblemOfUsingDirectSqlTests;
 
+import com.ohgiraffers.section01.problem.Category;
+import com.ohgiraffers.section01.problem.Menu;
+import com.ohgiraffers.section01.problem.MenuAndCategory;
 import org.junit.jupiter.api.*;
 
 import java.sql.*;
