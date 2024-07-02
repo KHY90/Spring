@@ -1,4 +1,4 @@
-package com.ohgiraffers.mapping.section06.idclass;
+package com.ohgiraffers.mapping.section06.compositekey;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -6,7 +6,7 @@ import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 import org.junit.jupiter.api.*;
 
-public class FieldAccessTests {
+public class EmbeddedKeyTests {
     private static EntityManagerFactory entityManagerFactory;
     private EntityManager entityManager;
 
