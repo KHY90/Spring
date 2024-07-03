@@ -1,4 +1,4 @@
-package com.ohgiraffers.blog.jooyeon.model.entity;
+package com.ohgiraffers.blog.jooyeon.entity;
 
 import jakarta.persistence.*;
 

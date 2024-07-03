@@ -1,7 +1,7 @@
 package com.ohgiraffers.blog.jooyeon.service;
 
-import com.ohgiraffers.blog.jooyeon.model.dto.BlogDTO;
-import com.ohgiraffers.blog.jooyeon.model.entity.JooyeonBlog;
+import com.ohgiraffers.blog.jooyeon.dto.BlogDTO;
+import com.ohgiraffers.blog.jooyeon.entity.JooyeonBlog;
 
 import com.ohgiraffers.blog.jooyeon.repository.JooyeonRepository;
 import jakarta.transaction.Transactional;

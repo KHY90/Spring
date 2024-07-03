@@ -1,6 +1,6 @@
 package com.ohgiraffers.blog.jooyeon.controller;
 
-import com.ohgiraffers.blog.jooyeon.model.dto.BlogDTO;
+import com.ohgiraffers.blog.jooyeon.dto.BlogDTO;
 
 import com.ohgiraffers.blog.jooyeon.service.JooyeonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,7 +57,7 @@ public class JooyeonController {
             mv.setViewName("error/page");
         } else {
             currentBlog = blogDTO;
-            mv.setViewName("redirect:jooyeon/jypage");
+            mv.setViewName("redirect:/jooyeon/jypage");
         }
 
         return mv;

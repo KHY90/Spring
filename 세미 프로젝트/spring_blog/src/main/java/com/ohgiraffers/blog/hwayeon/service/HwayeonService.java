@@ -3,6 +3,7 @@ package com.ohgiraffers.blog.hwayeon.service;
 import com.ohgiraffers.blog.hwayeon.model.dto.hwayeonBlogDTO;
 import com.ohgiraffers.blog.hwayeon.model.entity.HwayeonBlog;
 import com.ohgiraffers.blog.hwayeon.repository.HwayeonRepository;
+import com.ohgiraffers.blog.jaesuk.model.dto.BlogDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,7 +22,7 @@ public class HwayeonService {
     }
 
     @Transactional
-    public int post(hwayeonBlogDTO blogDTO) {
+    public int post(BlogDTO blogDTO) {
         List<HwayeonBlog> hwayeonBlogs = hwayeonRepository.findAll();
         // 도메인 로직
         for (HwayeonBlog blog: hwayeonBlogs) {
@@ -45,4 +46,7 @@ public class HwayeonService {
         return resultValue;
     }
 
+    public int post(hwayeonBlogDTO hyblogDTO) {
+        return 0;
+    }
 }

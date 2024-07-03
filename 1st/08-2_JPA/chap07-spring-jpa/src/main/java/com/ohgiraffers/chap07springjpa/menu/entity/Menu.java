@@ -18,7 +18,8 @@ public class Menu {
     private Integer menuPrice;
 
     @Column(name = "category_code")
-    private Integer categoryCode;
+//    private Ctegory categoryCode; // 강한결합
+    private Integer categoryCode; // 느슨한결합
 
     @Column(name = "orderable_status")
     private String orderableStatus;
