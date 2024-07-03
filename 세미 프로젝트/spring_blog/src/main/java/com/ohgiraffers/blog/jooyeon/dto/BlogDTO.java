@@ -2,8 +2,6 @@ package com.ohgiraffers.blog.jooyeon.dto;
 
 public class BlogDTO {
 
-
-
     private String blogTitle;
     private String blogContent;
 

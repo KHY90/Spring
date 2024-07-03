@@ -50,8 +50,8 @@ public class JooyeonController {
             mv.setViewName("redirect:/jooyeon/regist");
             return mv;
         }
-        int result = jooyeonService.post(blogDTO);
 
+        int result = jooyeonService.post(blogDTO);
 
         if (result <= 0) {
             mv.setViewName("error/page");
@@ -62,6 +62,6 @@ public class JooyeonController {
 
         return mv;
     }
-    }
+}
 
 
