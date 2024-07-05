@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 등록</title>
+</head>
+<body>
+<header>
+    <h1>게시글 등록</h1>
+</header>
+
+<section>
+    <form action="/hwayeon/postpage" method="post" th:object="${blogDTO}">
+        <div>
+            <label for="blogTitle">제목:</label>
+            <input type="text" id="blogTitle" name="blogTitle" th:field="*{blogTitle}" required>
+        </div>
+        <div>
+            <label for="blogContent">내용:</label>
+            <textarea id="blogContent" name="blogContent" th:field="*{blogContent}" required></textarea>
+        </div>
+        <div>
+            <button type="submit">등록</button>
+        </div>
+    </form>
+</section>
+
+</body>
+</html>

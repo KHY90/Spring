@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hwayeon Blog</title>
+</head>
+<body>
+<header>
+    <h1>Hwayeon Blog</h1>
+    <div>
+        <a th:href="@{/hwayeon/editpage}">게시글 등록</a>
+    </div>
+</header>
+
+<section>
+    <div th:each="post : ${posts}">
+        <div>
+            <h2 th:text="${post.blogTitle}">제목 없음</h2>
+            <p th:text="${post.blogContent}">내용 없음</p>
+            <a th:href="@{/hwayeon/modifypage/{blogNo}(blogNo=${post.blogNo})}">수정</a>
+            <a th:href="@{/hwayeon/delete/{blogNo}(blogNo=${post.blogNo})}">삭제</a>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
