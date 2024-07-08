@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/08-1_spring_core/chap01-ioc-container" />
+    <file type="web" url="file://$PROJECT_DIR$/08-1_spring_core/chap02-dependency-injection" />
+    <file type="web" url="file://$PROJECT_DIR$/08-1_spring_core/chap03-di-annotation" />
+    <file type="web" url="file://$PROJECT_DIR$/08-1_spring_core/chap04-bean" />
+    <file type="web" url="file://$PROJECT_DIR$/08-1_spring_core/chap05-aop" />
+    <file type="web" url="file://$PROJECT_DIR$/08-2_JPA/chap00-intro" />
+    <file type="web" url="file://$PROJECT_DIR$/08-2_JPA/chap01-persistence" />
+    <file type="web" url="file://$PROJECT_DIR$/08-2_JPA/chap02-mapping" />
+    <file type="web" url="file://$PROJECT_DIR$/08-2_JPA/chap03-association-mapping" />
+    <file type="web" url="file://$PROJECT_DIR$/08-2_JPA/chap07-spring-jpa" />
+    <file type="web" url="file://$PROJECT_DIR$/08_spring_webMVC/chap01-request-mapping" />
+    <file type="web" url="file://$PROJECT_DIR$/08_spring_webMVC/chap03-view-resolver" />
+    <file type="web" url="file://$PROJECT_DIR$/08_spring_webMVC/chap07-thymeleaf" />
+    <file type="web" url="file://$PROJECT_DIR$/chap07-spring-jpa" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/08_spring_webMVC/chap02-handler/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
