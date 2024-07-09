@@ -84,4 +84,8 @@ public class HwayeonBlogDTO {
                 ", category='" + category + '\'' +
                 '}';
     }
+
+    public Integer getId() {
+        return blogNo;
+    }
 }

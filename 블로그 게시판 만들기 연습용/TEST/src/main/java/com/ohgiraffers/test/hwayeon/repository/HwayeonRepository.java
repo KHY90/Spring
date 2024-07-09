@@ -2,13 +2,15 @@ package com.ohgiraffers.test.hwayeon.repository;
 
 import com.ohgiraffers.test.hwayeon.model.entity.HwayeonBlog;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface HwayeonRepository extends JpaRepository<HwayeonBlog, Integer> {
 
-    @Query("SELECT h FROM HwayeonBlog h ORDER BY h.createDate DESC")
-    List<HwayeonBlog> findTop5ByOrderByCreateDateDesc();
+//    void deleteById(Integer blogNo);
+
+    List<HwayeonBlog> findTopNByOrderByCreateDateDesc(int count);
 
 }

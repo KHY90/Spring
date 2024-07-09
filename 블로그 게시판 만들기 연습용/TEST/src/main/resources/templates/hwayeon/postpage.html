@@ -1,121 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Post Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화연 블로그</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
 </head>
 <body>
-<header>
-    <div class="headerlogo">
-        <a th:href="@{/}">
-            <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEyMTVfMjc3%2FMDAxNjcxMDkwNjU3NjAx.uy05CjAv_4VymZIj8qCXAei3LEHvgFy_llwv_uB5ubgg.4DUvwuY6JLlmv5BUTBIAKvRz-T2vXJCO17EQPPJ-_-sg.PNG.y2kwooga%2F%25B3%25D7%25C0%25CC%25B9%25F6_AI-05.png&type=sc960_832" alt="로고 이미지">
-        </a>
-    </div>
-    <div class="subject">
-        hwayeon blog
-    </div>
-    <div class="serch">
-        <div class="home">
-            <button type="button" class="btn btn-primary" onclick="location.href='/hwayeon/main'"> 홈 </button>
-        </div>
-        <div class="writebutton">
-            <button type="button" class="btn btn-primary" onclick="location.href='/hwayeon/editpage'">게시글 등록</button>
-        </div>
-        <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fe7.pngegg.com%2Fpngimages%2F381%2F351%2Fpng-clipart-computer-icons-google-search-icon-design-magnifying-glass-cartoon-logo-android.png&type=sc960_832" alt="검색 아이콘">
-    </div>
-</header>
+<!--헤더 영역-->
+<div th:insert="khyfragments/header :: headerFragment"></div>
+<!--헤더 영역-->
 
-<section>
-    <div class="container">
-        <div class="blogtitle">
-            <p><span th:text="${blogTitle}">블로그 제목</span></p>
-        </div>
-        <div class="blogcontents">
-            <p><span th:text="${blogContent}">블로그 내용</span></p>
-        </div>
-        <form th:action="@{/hwayeon/modifypage}" method="get">
-            <div class="modifybutton">
-                <button type="submit" class="btn btn-primary">수정</button>
+<!-- 메인 영역 -->
+<main>
+    <section class="services">
+        <!-- 게시글 리스트 시작 -->
+        <div class="container">
+            <div class="blogtitle">
+                <p><span th:text="${blogTitle}">블로그 제목</span></p>
             </div>
-        </form>
-    </div>
-</section>
+            <div class="blogcontents">
+                <p><span th:text="${blogContent}">블로그 내용</span></p>
+            </div>
+            <!-- 수정 폼 -->
+            <form th:action="@{/hwayeon/editpage}" method="get">
+                <input type="hidden" th:value="${blog?.blogNo}" name="blogNo"/>
+                <div class="modifybutton">
+                    <button type="submit">수정</button>
+                </div>
+            </form>
+            <!-- 삭제 폼 -->
+            <form th:action="@{/hwayeon/postpage/{blogNo}(blogNo=${blog?.blogNo})}" method="post">
+                <div class="deletebutton">
+                    <button type="submit">삭제</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!--풋터영역-->
+<div th:insert="khyfragments/footer :: footerFragment"></div>
 </body>
-
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    html, body {
-        height: 100%;
-        font-family: Arial, sans-serif;
-    }
-
-    .container {
-        justify-content: center;
-        align-items: center;
-        height: 80vh;
-    }
-
-    .blogtitle {
-        border: 1px solid #ccc;
-        padding: 20px;
-        border-radius: 15px;
-        margin-bottom: 20px;
-        background-color: #f9f9f9;
-        width: 80%;
-    }
-
-    .blogcontents {
-        border: 1px solid #ccc;
-        border-radius: 15px;
-        padding: 20px;
-        margin-bottom: 20px;
-        background-color: #f9f9f9;
-        width: 80%;
-    }
-
-    header {
-        grid-column: 1 / 4;
-        text-align: center;
-        font-size: 24px;
-        font-weight: bold;
-        padding: 20px 0;
-        display: flex;
-        justify-content: space-between;
-        border: 1px solid black;
-        margin-bottom: 10px;
-    }
-
-    .headerlogo a {
-        height: 40px;
-    }
-
-    .headerlogo a img {
-        max-width: 100%;
-        max-height: 100%;
-        height: 30px;
-        object-fit: contain;
-        margin: 0px 5px 0px 5px;
-    }
-
-    .serch {
-        display: flex;
-    }
-
-    .serch img {
-        height: 30px;
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-        margin: 0px 5px 0px 5px;
-    }
-</style>
 </html>
