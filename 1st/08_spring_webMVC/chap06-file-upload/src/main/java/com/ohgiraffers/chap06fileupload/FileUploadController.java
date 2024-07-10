@@ -78,6 +78,7 @@ public class FileUploadController {
 
         List<FileDTO> files = new ArrayList<>();
         List<String> saveFiles = new ArrayList<>();
+
         try{
             for(MultipartFile file : multipartFiles){
                 String originFileName = file.getOriginalFilename();
