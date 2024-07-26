@@ -1,0 +1,17 @@
+spring :
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format-sql: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/gangnam
+    username: gangnam
+    password: gangnam
+
+jwt:
+  key: jjooya930408love
+  time: 86400000
